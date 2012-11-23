@@ -1,0 +1,38 @@
+<html>
+
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript" src="ocr.js"></script>
+<script type="text/javascript" src="imageData.js"></script>
+<script type="text/javascript" src="imgOps.js"></script>
+<script type="text/javascript" src="brain.js"></script>
+<script type="text/javascript" src="ann.js"></script>
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="tbox">
+      
+      <p> 
+	Please input a character, or a string to be rendered to a canvas,
+	then classified
+      </p>
+      
+      <form>
+	Input:<input type="text" id="inputChar"/>
+	<input type="button" value="Run NN Test" onclick="Test()"/>
+      </form> 
+      <div id="errorBlock"> </div>
+      <div id="featureBlock">
+	<p id="featureBlockOutput"></p>
+	<input type="button" value="Train Neural Network" onclick="TrainNN()"/>
+	<input type="button" value="Get Trained Network" onclick="LoadNN()"/>
+      </div>
+      <div id="networkOutput">
+	</div>
+      <!-- <canvas id="renderedInput" height="300" width="300"></canvas> -->
+    </div> 
+ </div>
+</body>
+
+</html>
