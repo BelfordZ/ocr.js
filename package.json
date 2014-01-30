@@ -1,12 +1,12 @@
 {
 	"name": "ocr.js",
-	"description": "Optical Character Recognition Engine in Javascript",
-	"author": "belfordz",
-	"version": "0.1.0",
-	"main": "build/lib/node-zoho.js",
+	"description": "Optical Character Recognition Engine for the browser",
+	"author": "BelfordZ",
+	"version": "0.1.1",
+	"main": "ocr.js",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/picatic/node-zoho.git"
+		"url": "git://github.com/belfordz/ocr.js.git"
 	},
 	"dependencies": {
 		"browserify": "3.20.0",
