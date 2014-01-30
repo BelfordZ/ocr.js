@@ -2,6 +2,9 @@ ocr.js
 ======
 
 This project is currently being rebuilt. Stay tuned for a the next release
+
+[![NPM](https://nodei.co/npm/ocr.js.png)](https://nodei.co/npm/ocr.js/)
+
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/f778f321adad306cf68e08226e636f86 "githalytics.com")](http://githalytics.com/BelfordZ/ocr.js)
 
 <script>
