@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="bundle/ocr.js"></script>
+        <script type="text/javascript" src="examples/simple/main.js"></script>
+    </head>
+
+    <body onload="init()">
+        <div id="wrap">
+            <div id="tbox">
+
+                <p> Please input a character, or a string to be rendered to a canvas, then classified</p>
+
+                <form>
+                    Input:<input type="text" id="inputChar"/>
+                    <input type="button" value="Run NN Test" onclick="runTest()"/>
+                </form>
+
+                <div id="ocrOutput"></div>
+                <!-- <canvas id="renderedInput" height="300" width="300"></canvas> -->
+            </div>
+        </div>
+    </body>
+
+</html>
