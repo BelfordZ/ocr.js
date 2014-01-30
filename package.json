@@ -1,8 +1,10 @@
 {
 	"name": "ocr.js",
 	"description": "Optical Character Recognition Engine for the browser",
-	"author": "BelfordZ",
-	"version": "0.1.1",
+	"author": "BelfordZ <belfordz66@gmail.com>",
+	"version": "0.1.2",
+	"homepage": "https://github.com/belfordz/ocr.js",
+  	"bugs": "https://github.com/belfordz/ocr.js/issues",
 	"main": "ocr.js",
 	"repository": {
 		"type": "git",
