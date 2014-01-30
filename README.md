@@ -1,7 +1,7 @@
 ocr.js
 ======
 
-Optical Character Recognition Implemented Using Javascript (mostly). It uses Brain.js, a neural network javascript lib, as my method of classification. I use ascii chars rendered onto the canvas, then do pixel manipulation to get bounding boxes, contours, what ever you need. If you are interested in working with this project, shoot me an email belfordz at gmail 
+This project is currently being rebuilt. Stay tuned for a the next release
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/f778f321adad306cf68e08226e636f86 "githalytics.com")](http://githalytics.com/BelfordZ/ocr.js)
 
 <script>
