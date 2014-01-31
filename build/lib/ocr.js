@@ -1,11 +1,13 @@
 (function() {
-  var Image, Ocr, Utes, _;
+  var Image, Ocr, Trainer, Utes, _;
 
   _ = require("underscore");
 
   Utes = require("./Utes/index.coffee");
 
   Image = require("./image/Image.coffee");
+
+  Trainer = require("./NeuralNetwork/Trainer.coffee");
 
   Ocr = (function() {
     Ocr.prototype._segments = void 0;
@@ -14,8 +16,9 @@
 
     Ocr.prototype._results = [];
 
-    function Ocr(canvasId) {
+    function Ocr(canvasId, opts) {
       var a;
+      this.opts = opts;
       this.canvas = new Utes.Canvas(canvasId);
       this.rawImage = new Image(this.canvas.readImageData());
       a = this.rawImage.toImageData();
@@ -30,7 +33,13 @@
     */
 
 
-    Ocr.prototype.segment = function() {};
+    Ocr.prototype.segment = function() {
+      var _base, _base1;
+      if (typeof (_base = this.opts).beforeSegment === "function") {
+        _base.beforeSegment(this);
+      }
+      return typeof (_base1 = this.opts).afterSegment === "function" ? _base1.afterSegment(this) : void 0;
+    };
 
     Ocr.prototype.extractFeatures = function() {};
 
@@ -63,6 +72,13 @@
     return Ocr;
 
   })();
+
+  /*
+    Class Methods
+  */
+
+
+  Ocr.Trainer = Trainer;
 
   module.exports = Ocr;
 

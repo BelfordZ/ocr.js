@@ -1,7 +1,11 @@
+brain = require("brain")
+
 class Trainer
 
-  constructor: (@ann, @trainingSet = []) ->
-
+  constructor: (@trainingSet = []) ->
+    if Trainer.trainingSet.length is 0
+      parseTrainingSet()
+    return Trainer
 
   addTestCase: (input, output) ->
     @trainingSet.push({input: input, output: output})

@@ -2,6 +2,7 @@ _ = require("underscore")
 
 Utes = require("./Utes/index.coffee")
 Image = require("./image/Image.coffee")
+Trainer = require("./NeuralNetwork/Trainer.coffee")
 
 class Ocr
 
@@ -10,7 +11,7 @@ class Ocr
   _features: undefined
   _results: []
 
-  constructor: (canvasId) ->
+  constructor: (canvasId, @opts) ->
     @canvas = new Utes.Canvas(canvasId)
     @rawImage = new Image(@canvas.readImageData())
 
@@ -18,13 +19,14 @@ class Ocr
     @canvas.writeImageData(a)
     console.log _.unique(@canvas.readImageData().data)
 
-
   ###*
    * Returns a new Image object who forms a bounding box around a single character
    * @param  {Image}      Image object containing 1 or more characters
    * @return {[Image]}    Array of Image Objects, each bounded by the size of the character.
   ###
   segment: ->
+    @opts.beforeSegment?(@)
+    @opts.afterSegment?(@)
 
 
   extractFeatures: ->
@@ -49,5 +51,11 @@ class Ocr
     @classify(@_segments, @_features)
 
     return @resultingString
+
+###
+  Class Methods
+###
+Ocr.Trainer = Trainer
+
 
 module.exports = Ocr

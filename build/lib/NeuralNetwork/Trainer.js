@@ -1,10 +1,15 @@
 (function() {
-  var Trainer;
+  var Trainer, brain;
+
+  brain = require("brain");
 
   Trainer = (function() {
-    function Trainer(ann, trainingSet) {
-      this.ann = ann;
+    function Trainer(trainingSet) {
       this.trainingSet = trainingSet != null ? trainingSet : [];
+      if (Trainer.trainingSet.length === 0) {
+        parseTrainingSet();
+      }
+      return Trainer;
     }
 
     Trainer.prototype.addTestCase = function(input, output) {
