@@ -23,7 +23,7 @@
       this.rawImage = new Image(this.canvas.readImageData());
       a = this.rawImage.toImageData();
       this.canvas.writeImageData(a);
-      console.log(_.unique(this.canvas.readImageData().data));
+      Utes.ImageOps.generateImageDataForCharacter("b");
     }
 
     /**

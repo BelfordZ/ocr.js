@@ -17,7 +17,7 @@ class Ocr
 
     a = @rawImage.toImageData()
     @canvas.writeImageData(a)
-    console.log _.unique(@canvas.readImageData().data)
+    Utes.ImageOps.generateImageDataForCharacter("b")
 
   ###*
    * Returns a new Image object who forms a bounding box around a single character

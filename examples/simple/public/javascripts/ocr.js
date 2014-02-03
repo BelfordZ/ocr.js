@@ -5657,7 +5657,7 @@ Ocr = (function() {
     this.rawImage = new Image(this.canvas.readImageData());
     a = this.rawImage.toImageData();
     this.canvas.writeImageData(a);
-    console.log(_.unique(this.canvas.readImageData().data));
+    Utes.ImageOps.generateImageDataForCharacter("b");
   }
 
 
@@ -5778,21 +5778,42 @@ module.exports = Canvas;
 
 
 },{}],24:[function(require,module,exports){
-var ImageOps;
+var Canvas;
 
-ImageOps = (function() {
-  function ImageOps() {}
+Canvas = require("./Canvas.coffee");
 
-  ImageOps.prototype.MakeBoundingBoxOnChar = function() {};
+({
+  MakeBoundingBoxOnChar: function() {},
+  generateImageDataForCharacter: function(chars) {
+    var input, tmpCanvas;
+    switch (typeof chars) {
+      case "string":
+        input = [chars];
+        break;
+      case "number":
+        input = ["" + chars];
+        break;
+      case "object" && chars instanceof Array:
+        input = chars;
+        break;
+      default:
+        return new Error("Input must be a string, or an array of strings");
+    }
+    tmpCanvas = document.createElement("canvas");
+    tmpCanvas.id = "tmp";
+    tmpCanvas.height = "400";
+    tmpCanvas.width = "400";
+    return $("body").append(tmpCanvas);
+  }
+});
 
-  return ImageOps;
+module.exports = {
+  MakeBoundingBoxOnChar: MakeBoundingBoxOnChar,
+  generateImageDataForCharacter: generateImageDataForCharacter
+};
 
-})();
 
-module.exports = ImageOps;
-
-
-},{}],25:[function(require,module,exports){
+},{"./Canvas.coffee":23}],25:[function(require,module,exports){
 var AsciiToCharNumber, CharNumberToAscii, greyScaleToRgb, normalize;
 
 AsciiToCharNumber = function(ascii) {

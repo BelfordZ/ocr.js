@@ -10,5 +10,6 @@ var dewit = function() {
 
     var ocrjs = new ocr("sample", opts);
     ocrjs.canvas.renderCharacter("a", "arial", 32)
-    ocrjs.canvas.deconstructor()
+    var character = ocrjs.canvas.readImageData();
+    //ocrjs.canvas.deconstructor()
 };
