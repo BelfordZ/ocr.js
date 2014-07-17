@@ -1,7 +1,7 @@
 ocr.js
 ======
 
-This project is currently being rebuilt. Stay tuned for a the next release
+This project is currently being rebuilt. Stay tuned for the next release
 
 [![NPM](https://nodei.co/npm/ocr.js.png?downloads=true&stars=true)](https://nodei.co/npm/ocr.js/)
 
