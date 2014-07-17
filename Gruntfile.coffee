@@ -56,5 +56,4 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks('grunt-contrib-copy')
 
     grunt.registerTask('default', ['coffeelint'])
-    grunt.registerTask('release', ['bump_version','do_release'])
     grunt.registerTask("bumpExamples", ["copy"])
